@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript & DOM : Techniques Avancées - Exercice 01</title>
+    <script>
+      /* Chaînage d'exécution */
+      /*
+       * En JavaScript, on peut, en utilisant certaines ASTUCES de programmation chaîner l'exécution de méthodes d'un objet. En d'autre termes, exécuter plusieurs méthodes d'un objet à la suite et en une seule ligne. Pour faire cela, on crée des méthodes qui retournent une référence à l'objet à partir duquel elles ont été exécutées.
+       */
+
+      //Énoncé
+      /*
+      1. Créez un objet en JSON qui contient 3 méthodes. (OK)
+      */
+      // let object = {
+      //   brag() {
+      //     console.log("I'm da best!");
+      //     return object;
+      //   },
+      //   taunt() {
+      //     console.log("Come on you filth!");
+      //     return object;
+      //   },
+      //   cower() {
+      //     console.log("Omg too strong for me! >_<");
+      //     return object;
+      //   },
+      // };
+      /*
+      2. Comment obtient-on, dans une méthode, une référence à l'objet contenant la méthode ? Retournez cette référence à partir de chacune des méthodes. (OK)
+      */
+      // object.brag(object);
+      // object.taunt(object);
+      // object.cower(object);
+      /*
+      3. Exécutez les 3 méthodes sur UNE SEULE ligne.
+      */
+      // object.cower(object.brag(object.taunt()));
+      /*
+      4. Créez une fonction usine qui retourne l'objet.
+      */
+      let $ = function () {
+        return {
+          brag() {
+            console.log("I'm da best!");
+          },
+          taunt() {
+            console.log("Come on you filth!");
+          },
+          cower() {
+            console.log("Omg too strong for me! >_<");
+          },
+        };
+      };
+      /*
+      5. Exécutez la fonction usine et les 3 méthodes sur UNE SEULE ligne.
+      */
+      $().cower($().taunt($().brag()));
+      /*
+      6. Renommez votre fonction usine avec le caractère $ et exécutez la fonction usine et les 3 méthodes sur une seule ligne.
+      */
+      // FAIT
+      /*
+      7. Vous venez de comprendre un mécanisme de base de la librairie jQuery !
+      */
+    </script>
+  </head>
+  <body>
+    <h1>Titre principal</h1>
+    <ul>
+      <li>Premier point</li>
+      <li>Deuxième point</li>
+      <li>Troisième point</li>
+    </ul>
+    <div>
+      <div>
+        <h2><span>1</span>. Titre de la première section</h2>
+        <p>
+          <span>1.1</span>. Premier paragraphe de la première section et un
+          <a href="#">lien</a>.
+        </p>
+        <p>
+          <span>1.2</span>. Deuxième paragraphe de la deuxième section et un
+          <a href="#">lien</a>.
+        </p>
+      </div>
+      <div>
+        <h2><span>2</span>. Titre de la deuxième section</h2>
+        <p>
+          <span>2.1</span>. Premier paragraphe de la deuxième section et un
+          <a href="#">lien</a>.
+        </p>
+        <p>
+          <span>2.2</span>. Deuxième paragraphe de la deuxième section et un
+          <a href="#">lien</a>.
+        </p>
+      </div>
+      <div>
+        <h2><span>3</span>. Titre de la troisième section</h2>
+        <p>
+          <span>3.1</span>. Premier paragraphe de la troisième section et un
+          <a href="#">lien</a>.
+        </p>
+        <p>
+          <span>3.2</span>. Deuxième paragraphe de la troisième section et un
+          <a href="#">lien</a>.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
